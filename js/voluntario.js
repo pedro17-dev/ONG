@@ -42,8 +42,21 @@ window.addEventListener('scroll', () => {
     scrollButton.style.display = window.scrollY > 300 ? 'block' : 'none';
 });
 
-// ===== Validação de cadastro de voluntário com mensagem animada =====
+// ===== Funções executadas após o DOM carregar (Lazy Loading e Validações) =====
 document.addEventListener('DOMContentLoaded', () => {
+    
+    // --- Lógica do Menu Hambúrguer (ADICIONADA AQUI) ---
+    const btnMenu = document.querySelector('.menu-mobile-btn');
+    const menuLinks = document.querySelector('#menu-links');
+
+    if (btnMenu && menuLinks) {
+        btnMenu.addEventListener('click', () => {
+            menuLinks.classList.toggle('active');
+        });
+    }
+    // --- FIM da Lógica do Menu Hambúrguer ---
+
+    // ===== Validação de cadastro de voluntário com mensagem animada =====
     const formVoluntario = document.getElementById('cadastro'); // Formulário
     const senhaInput = document.getElementById('senha'); // Campo senha
     const confirmSenhaInput = document.getElementById('confirmSenha'); // Campo confirmar senha
@@ -85,38 +98,44 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 3000);
         });
     }
-// Seleciona os inputs
-const cpfInput = document.getElementById("cpf");
-const telefoneInput = document.getElementById("telefone");
-const cepInput = document.getElementById("cep"); // só uma vez
+    
+    // Seleciona os inputs (movidos para dentro do DOMContentLoaded para garantir a execução)
+    const cpfInput = document.getElementById("cpf");
+    const telefoneInput = document.getElementById("telefone");
+    const cepInput = document.getElementById("cep"); // só uma vez
 
-// Máscara de CPF
-cpfInput.addEventListener("input", function () {
-  let valor = this.value.replace(/\D/g, ""); // remove tudo que não é número
-  if (valor.length > 11) valor = valor.slice(0, 11); // limita a 11 dígitos
-  valor = valor.replace(/(\d{3})(\d)/, "$1.$2");
-  valor = valor.replace(/(\d{3})(\d)/, "$1.$2");
-  valor = valor.replace(/(\d{3})(\d{1,2})$/, "$1-$2");
-  this.value = valor;
-});
+    // Máscara de CPF
+    if (cpfInput) {
+        cpfInput.addEventListener("input", function () {
+            let valor = this.value.replace(/\D/g, ""); // remove tudo que não é número
+            if (valor.length > 11) valor = valor.slice(0, 11); // limita a 11 dígitos
+            valor = valor.replace(/(\d{3})(\d)/, "$1.$2");
+            valor = valor.replace(/(\d{3})(\d)/, "$1.$2");
+            valor = valor.replace(/(\d{3})(\d{1,2})$/, "$1-$2");
+            this.value = valor;
+        });
+    }
 
-// Máscara de Telefone
-telefoneInput.addEventListener("input", function () {
-  let valor = this.value.replace(/\D/g, ""); // remove tudo que não é número
-  if (valor.length > 11) valor = valor.slice(0, 11); // limita a 11 dígitos
-  valor = valor.replace(/^(\d{2})(\d)/, "($1) $2"); // adiciona parênteses no DDD
-  valor = valor.replace(/(\d{5})(\d)/, "$1-$2");    // adiciona hífen
-  this.value = valor;
-});
+    // Máscara de Telefone
+    if (telefoneInput) {
+        telefoneInput.addEventListener("input", function () {
+            let valor = this.value.replace(/\D/g, ""); // remove tudo que não é número
+            if (valor.length > 11) valor = valor.slice(0, 11); // limita a 11 dígitos
+            valor = valor.replace(/^(\d{2})(\d)/, "($1) $2"); // adiciona parênteses no DDD
+            valor = valor.replace(/(\d{5})(\d)/, "$1-$2");    // adiciona hífen
+            this.value = valor;
+        });
+    }
 
-// Máscara de CEP
-cepInput.addEventListener("input", function () {
-  let valor = this.value.replace(/\D/g, ""); // remove tudo que não é número
-  if (valor.length > 8) valor = valor.slice(0, 8); // limita a 8 dígitos
-  valor = valor.replace(/^(\d{5})(\d)/, "$1-$2"); // adiciona hífen após os 5 primeiros números
-  this.value = valor;
-});
+    // Máscara de CEP
+    if (cepInput) {
+        cepInput.addEventListener("input", function () {
+            let valor = this.value.replace(/\D/g, ""); // remove tudo que não é número
+            if (valor.length > 8) valor = valor.slice(0, 8); // limita a 8 dígitos
+            valor = valor.replace(/^(\d{5})(\d)/, "$1-$2"); // adiciona hífen após os 5 primeiros números
+            this.value = valor;
+        });
+    }
 
 
-
-});
+}); // FIM de DOMContentLoaded

@@ -5,25 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Transforma+</title>
   </head>
-  <!-- Importação da fonte de ícones do Google Material Icons -->
   <link
     href="https://fonts.googleapis.com/icon?family=Material+Icons"
     rel="stylesheet"
   />
-  <!-- Importação do arquivo CSS externo para estilização -->
   <link rel="stylesheet" href="css/index.css" />
+  <link rel="stylesheet" href="css/responsividade.css">
   <body>
-    <!-- Cabeçalho e navegação principal -->
     <header>
       <nav>
-        <!-- Logo clicável que leva para a página inicial -->
+        <button class="menu-mobile-btn">
+            <span class="material-icons">menu</span>
+        </button>
+        
         <a href="index.html">
           <h2>TRANSFORMA+</h2>
         </a>
 
-        <!-- Lista de links de navegação -->
-        <ul>
-          <!-- Cada item da lista contém um ícone e um link -->
+        <ul id="menu-links">
           <li>
             <span class="material-icons">home</span
             ><a href="index.html">Home</a>
@@ -45,7 +44,6 @@
     </header>
 
     <main>
-      <!-- Banner principal da página -->
       <section id="banner">
         <img
           src="assets/pexels-max-fischer-5212700.jpg"
@@ -53,31 +51,24 @@
           loading="lazy"
         />
 
-        <!-- Texto principal do banner -->
         <h1>Conectando pessoas, transformando realidades</h1>
 
-        <!-- Botões de ação rápida -->
         <div class="botoes">
-          <!-- Botão para página de voluntariado -->
           <a href="voluntario.html"
             ><button><strong>SEJA VOLUNTÁRIO</strong></button></a
           >
 
-          <!-- Botão para página de doações -->
           <a href="doações.html"
             ><button><strong>DOE AGORA</strong></button></a
           >
         </div>
       </section>
 
-      <!-- Seção Sobre Nós -->
       <section id="sobre-nos">
         <div class="sobre-nos-container">
-          <!-- Título da seção -->
           <h1>Sobre a ONG</h1>
           <h3>Conheça a nossa história e como transformamos vidas</h3>
 
-          <!-- Descrição sobre a ONG -->
           <p>
             A Transforma+ nasceu com o propósito de transformar vidas por meio
             da educação e da capacitação. Acreditamos que o conhecimento é uma
@@ -85,7 +76,6 @@
             mais justo e inclusivo.
           </p>
 
-          <!-- Imagem ilustrativa da seção -->
           <img
             src="assets/pexels-ladiwaynegrafix-18449721.jpg"
             alt=""
@@ -96,7 +86,6 @@
         <section id="missao-valores-visao">
           <h2>Quem Somos</h2>
           <div class="cards-container">
-            <!-- Card Missão -->
             <div class="card-quemSomos">
               <h3>Missão</h3>
               <p>
@@ -106,7 +95,6 @@
               </p>
             </div>
 
-            <!-- Card Visão -->
             <div class="card-visao">
               <h3>Visão</h3>
               <p>
@@ -116,7 +104,6 @@
               </p>
             </div>
 
-            <!-- Card Valores -->
             <div class="card-valores">
               <h3>Valores</h3>
               <ul>
@@ -132,10 +119,8 @@
         </section>
 
         <div class="ações">
-          <!-- Título da subseção -->
           <h3>O que Fazemos / Nossas Ações</h3>
 
-          <!-- Descrição das ações da ONG -->
           <p>
             Desenvolvemos programas e projetos voltados para o desenvolvimento
             pessoal e profissional, oferecendo cursos, oficinas e atividades que
@@ -143,53 +128,42 @@
             trabalho.
           </p>
 
-          <!-- Imagem ilustrativa da subseção -->
           <img src="assets/aula.jpg" alt="" loading="lazy" />
         </div>
       </section>
 
-      <!-- Seção Público e Impacto -->
       <section id="publico">
         <div class="publico-container">
-          <!-- Título do público-alvo -->
           <h2>Nosso Público</h2>
 
-          <!-- Descrição do público atendido -->
           <p>
             Apoiamos jovens e adultos que buscam desenvolvimento pessoal e
             profissional, oferecendo recursos para transformar suas histórias.
           </p>
 
-          <!-- Imagem ilustrativa do público -->
           <img src="assets/nosso publico.jpg" alt="" loading="lazy" />
         </div>
 
         <div class="impacto">
-          <!-- Título da subseção de impacto -->
           <h2>Impacto e Resultados</h2>
 
-          <!-- Descrição dos resultados da ONG -->
           <p>
             Capacitar centenas de pessoas anualmente, promovendo aprendizado
             real e oportunidades concretas para quem precisa.
           </p>
 
-          <!-- Imagem ilustrativa do impacto -->
           <img src="assets/imapcto.jpg" alt="" loading="lazy" />
         </div>
       </section>
     </main>
 
-    <!-- Rodapé da página -->
     <footer>
-      <!-- Direitos autorais -->
       <p>© 2025 ONG Transforma+. Todos os direitos reservados.</p>
-      <!-- Seção de Contato -->
       <section id="contato">
         <h2>Contato</h2>
-        <!-- Informações de contato -->
         <p>Email: contato@transforma.org.br</p>
       </section>
     </footer>
+    <script src="js/index.js"></script>
   </body>
 </html>

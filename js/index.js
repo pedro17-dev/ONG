@@ -1,6 +1,9 @@
-// ===== Lazy Loading Inteligente =====
+// ===== Lazy Loading Inteligente e Funcionalidades que dependem do DOM =====
 // Espera o carregamento completo do DOM antes de executar o código
 document.addEventListener("DOMContentLoaded", function() {
+    
+    // --- Lógica do Lazy Loading ---
+    
     // Seleciona todas as imagens que possuem o atributo 'data-src'
     const imagens = document.querySelectorAll('img[data-src]');
 
@@ -29,7 +32,21 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Observa cada imagem para disparar o lazy loading
     imagens.forEach(img => observer.observe(img));
-});
+
+
+    // --- Lógica do Menu Hambúrguer (ADICIONADA AQUI) ---
+    
+    const btnMenu = document.querySelector('.menu-mobile-btn');
+    const menuLinks = document.querySelector('#menu-links');
+
+    if (btnMenu && menuLinks) {
+        btnMenu.addEventListener('click', () => {
+            menuLinks.classList.toggle('active');
+        });
+    }
+
+}); // FIM de DOMContentLoaded
+
 
 // ===== Rolagem suave para links de âncora =====
 // Seleciona todos os links que começam com '#'
@@ -52,7 +69,7 @@ scrollButton.textContent = '↑'; // Texto do botão (seta para cima)
 
 // Estiliza o botão usando Object.assign para definir várias propriedades
 Object.assign(scrollButton.style, {
-    position: 'fixed',       // Fixa o botão na tela
+    position: 'fixed',      // Fixa o botão na tela
     bottom: '30px',          // Distância da parte inferior
     right: '30px',           // Distância da borda direita
     padding: '10px 15px',    // Espaçamento interno

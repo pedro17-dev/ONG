@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Voluntário</title>
     <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="css/responsividade.css">
     <!-- Importa ícones do Google Material Icons -->
     <link
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
@@ -12,16 +13,17 @@
     />
   </head>
   <body>
-    <!-- Cabeçalho e navegação principal -->
-    <header>
+   <header>
       <nav>
-        <!-- Logo da ONG que redireciona para a página inicial -->
+        <button class="menu-mobile-btn">
+            <span class="material-icons">menu</span>
+        </button>
+        
         <a href="index.html">
           <h2>TRANSFORMA+</h2>
         </a>
 
-        <!-- Lista de navegação com ícones -->
-        <ul>
+        <ul id="menu-links">
           <li>
             <span class="material-icons">home</span
             ><a href="index.html">Home</a>

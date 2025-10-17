@@ -81,11 +81,28 @@ btnLimpar.addEventListener('click', () => {
     inputValor.value = ''; 
 });
 
-// ===== Validação do cadastro de voluntário =====
+// ===== Validação do cadastro de voluntário (Se o ID 'cadastro' existir nesta página) =====
 const formVoluntario = document.getElementById('cadastro'); // Formulário de cadastro de voluntário
 
-// Previne o envio automático do formulário para permitir validações
-formVoluntario.addEventListener('submit', (e) => {
-    e.preventDefault(); 
-    // Aqui você pode adicionar validações ou envio via AJAX
-});
+if (formVoluntario) {
+    // Previne o envio automático do formulário para permitir validações
+    formVoluntario.addEventListener('submit', (e) => {
+        e.preventDefault(); 
+        // Aqui você pode adicionar validações ou envio via AJAX
+    });
+}
+
+// =========================================================================
+// ===== Lógica do Menu Hambúrguer (ADICIONADA AQUI) =====
+// =========================================================================
+
+// Como este script é executado no final do <body>, os elementos já devem existir
+const btnMenu = document.querySelector('.menu-mobile-btn');
+const menuLinks = document.querySelector('#menu-links');
+
+// Adiciona o listener para abrir/fechar o menu
+if (btnMenu && menuLinks) {
+    btnMenu.addEventListener('click', () => {
+        menuLinks.classList.toggle('active');
+    });
+}

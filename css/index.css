@@ -1,117 +1,5 @@
-/* Espaçamento do conteúdo principal */
 main {
   margin-top: 120px;
-  padding: 0 20px; /* Adiciona espaço lateral no celular */
-}
-
-/* Imagens se adaptam ao tamanho da tela */
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin: 0 auto; /* Centraliza imagens */
-}
-
-/* Container dos cards */
-.cards-container {
-  display: flex;
-  flex-direction: column; /* Empilha os cards no celular */
-  gap: 20px;
-  align-items: center;
-}
-
-/* Botões de valores */
-.botoes-valores button {
-  display: inline-block;
-  margin: 8px 5px;
-  padding: 10px 15px;
-  border: none;
-  border-radius: 8px;
-  background-color: #007bff;
-  color: white;
-  font-size: 1rem;
-}
-
-/* ==== RESPONSIVIDADE PARA CELULAR ==== */
-@media (max-width: 767px) {
-  nav {
-    flex-direction: column;
-    padding: 10px 20px;
-  }
-
-  nav ul {
-    flex-direction: column;
-    gap: 15px;
-    align-items: center;
-  }
-
-  #banner h1 {
-    font-size: 1.5rem;
-    top: 20%;
-  }
-
-  #banner .botoes {
-    flex-direction: column;
-    top: 85%;
-    gap: 10px;
-  }
-
-  section {
-    padding: 15px 20px;
-  }
-
-  p {
-    font-size: 18px;
-  }
-
-  .cards-container > div {
-    width: 100%;
-    margin-bottom: 15px;
-  }
-
-  .sobre-nos-container img,
-  .ações img,
-  .publico-container img,
-  .impacto img {
-    margin-left: 0;
-    max-width: 100%;
-  }
-
-  .botoes-valores {
-    flex-direction: column;
-    align-items: center;
-    margin-left: 0;
-    width: 100%;
-  }
-
-  form {
-    padding: 20px;
-    width: 90%;
-  }
-
-  form button {
-    padding: 15px;
-  }
-}
-
-/* ==== TABLETS E TELAS MAIORES ==== */
-@media (min-width: 768px) {
-  .cards-container {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .botoes-valores button {
-    font-size: 1.1rem;
-  }
-}
-
-/* ==== DESKTOP ==== */
-@media (min-width: 1024px) {
-  .cards-container {
-    justify-content: space-between;
-  }
 }
 
 /* Reset*/
@@ -241,6 +129,7 @@ p {
 }
 
 /* Sobre Nós */
+
 .sobre-nos-container h1 {
   margin-top: 20px;
 }
@@ -300,7 +189,6 @@ p {
   text-align: justify;
   flex-wrap: wrap;
 }
-
 .card-valores ul {
   margin-left: 100px;
 }
@@ -308,7 +196,6 @@ p {
 li {
   list-style: none;
 }
-
 /* Cards */
 .cards-container {
   display: flex;
@@ -407,7 +294,7 @@ option {
   color: black;
 }
 
-/* Botões valores */
+/*botoes valores*/
 .botoes-valores {
   display: flex;
   width: 300px;
@@ -419,8 +306,8 @@ option {
 #cadastro-voluntario {
   margin-top: 80px;
 }
+/*contato*/
 
-/* Contato */
 #contato p {
   text-align: center;
 }
