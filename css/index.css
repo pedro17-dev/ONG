@@ -300,12 +300,21 @@ option {
   width: 300px;
   justify-items: auto;
   padding: 15px;
-  margin-left: 20%;
+  margin-left: 10%;
 }
 
+button.doacao {
+  font-size: 22px;
+  border-radius: 20px;
+}
+
+
+/*casdastro*/
 #cadastro-voluntario {
   margin-top: 80px;
 }
+
+
 /*contato*/
 
 #contato p {
@@ -327,3 +336,33 @@ footer p {
 footer h2 {
   color: white;
 }
+
+.mensagem-flutuante {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.95);
+  background-color: #073609;
+  color: white;
+  padding: 18px 36px;
+  border-radius: 12px;
+  font-size: 18px;
+  font-weight: bold;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  z-index: 2000;
+  transition: all 0.10s ease;
+}
+
+.mensagem-flutuante.mostrar {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+button{
+  font-size: 18px;
+}
+
+
+
+
